@@ -59,6 +59,36 @@ def main() -> None:
         prompt,
         ("pull request", "풀 리퀘스트", "pr 작성", "pr 리뷰", "코드 리뷰", "code review"),
     )
+    issue_authoring = includes(
+        prompt,
+        (
+            "이슈 작성",
+            "이슈 생성",
+            "이슈 등록",
+            "issue 작성",
+            "issue create",
+            "issue 생성",
+            "github issue",
+            "github 이슈",
+        ),
+    )
+    incident_issue = issue_authoring and includes(
+        prompt,
+        (
+            "버그",
+            "장애",
+            "incident",
+            "오류",
+            "에러",
+            "사용자 문의",
+            "실제 이슈",
+            "p0",
+            "p1",
+            "긴급",
+            "대응",
+            "재현",
+        ),
+    )
     style = includes(
         prompt,
         (
@@ -164,6 +194,14 @@ def main() -> None:
 
     if pull_request:
         append_unique(skills, "team-pr-authoring")
+
+    if issue_authoring:
+        append_unique(
+            skills,
+            "team-incident-issue-authoring"
+            if incident_issue
+            else "team-development-issue-authoring",
+        )
 
     if not skills:
         return
