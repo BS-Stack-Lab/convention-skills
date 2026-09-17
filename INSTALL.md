@@ -1,12 +1,28 @@
 # 팀 Codex 스킬 설치
 
+## 권장: 훅 포함 플러그인 설치
+
+각자의 맥에서 Codex 데스크톱 앱을 열고 플러그인 화면에서 마켓플레이스를 가져옵니다.
+
+- 저장소: `https://github.com/BS-Stack-Lab/convention-skills`
+- 경로: 비워 둠
+- 브랜치: `main`
+
+그다음 `Convention Skills`를 설치하고, 표시되는 훅 정의를 검토해 신뢰합니다. 새 task를
+열면 `UserPromptSubmit` 훅이 백엔드·프론트엔드·PR 관련 요청을 판별해 필요한 스킬을
+Codex에 안내합니다. 이 훅은 안내 전용이며 파일을 변경하거나 도구 실행을 허용·차단하지
+않습니다.
+
+## 스킬만 설치
+
 이 폴더를 각자의 맥으로 받은 뒤 아래 명령을 실행합니다.
 
 ```bash
 bash install.sh
 ```
 
-스크립트는 아래 스킬을 `~/.codex/skills`에 설치합니다.
+스크립트는 아래 스킬을 `~/.codex/skills`에 설치합니다. 이 방식에는 훅이 포함되지
+않습니다.
 
 - `team-backend-conventions`
 - `team-backend-code-style`

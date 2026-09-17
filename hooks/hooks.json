@@ -1,0 +1,18 @@
+{
+  "description": "Routes relevant user requests to the installed BS-Stack-Lab convention skills.",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$PLUGIN_ROOT/hooks/route_convention_skill.py\"",
+            "timeout": 3,
+            "statusMessage": "Routing team conventions",
+            "additionalContextLimit": 700
+          }
+        ]
+      }
+    ]
+  }
+}

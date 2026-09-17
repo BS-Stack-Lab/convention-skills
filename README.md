@@ -16,7 +16,22 @@
 - `team-frontend-review-governance`: PR·리뷰·병합·배포 운영
 - `team-pr-authoring`: PR 요청 시 자동 적용되는 일반·고위험 PR 작성 가이드
 
-## 설치
+## 훅 포함 설치
+
+Codex 데스크톱 앱의 플러그인 화면에서 아래 GitHub 저장소를 마켓플레이스로 가져온 뒤
+`Convention Skills`를 설치합니다.
+
+- 저장소: `https://github.com/BS-Stack-Lab/convention-skills`
+- 경로: 비워 둠
+- 브랜치: `main`
+
+설치 중 표시되는 훅 정의를 검토하고 신뢰해야 자동 라우팅이 실행됩니다. 이후 새 task를
+열면 사용자 요청이 제출될 때 백엔드·프론트엔드·PR 관련 키워드를 판별해 필요한 스킬만
+Codex 컨텍스트에 안내합니다. 훅은 코드를 수정하거나 명령을 차단하지 않습니다.
+
+## 스킬만 설치
+
+훅 없이 스킬만 사용할 때는 아래 방법을 사용합니다.
 
 ```bash
 git clone https://github.com/BS-Stack-Lab/convention-skills.git
@@ -24,4 +39,4 @@ cd convention-skills
 bash install.sh
 ```
 
-설치 후 Codex를 재시작하거나 새 task를 열면 됩니다. 상세 설치 방법은 [INSTALL.md](INSTALL.md)를 참고하세요.
+`bash install.sh`은 스킬만 설치하며, 자동 라우팅 훅은 설치하지 않습니다. 상세 설치 방법은 [INSTALL.md](INSTALL.md)를 참고하세요.

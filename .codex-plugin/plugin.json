@@ -1,0 +1,30 @@
+{
+  "name": "convention-skills",
+  "version": "1.0.0",
+  "description": "BS-Stack-Lab의 백엔드·프론트엔드·PR 컨벤션 스킬과 자동 라우팅 훅",
+  "author": {
+    "name": "BS-Stack-Lab",
+    "url": "https://github.com/BS-Stack-Lab"
+  },
+  "repository": "https://github.com/BS-Stack-Lab/convention-skills",
+  "keywords": [
+    "conventions",
+    "backend",
+    "frontend",
+    "pull-request",
+    "hooks"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Convention Skills",
+    "shortDescription": "팀 컨벤션 스킬과 자동 라우팅 훅",
+    "longDescription": "백엔드, 프론트엔드, PR 관련 요청에 맞는 팀 컨벤션 스킬을 자동으로 선택하도록 안내합니다.",
+    "developerName": "BS-Stack-Lab",
+    "category": "Productivity",
+    "capabilities": [
+      "Skills",
+      "Hooks"
+    ],
+    "defaultPrompt": "팀 컨벤션에 맞춰 이 작업을 진행해 줘."
+  }
+}
