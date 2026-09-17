@@ -9,6 +9,11 @@ target_root="${codex_root}/skills"
 skills=(
   team-backend-conventions
   team-frontend-conventions
+  team-frontend-code-style
+  team-frontend-api-integration
+  team-frontend-git-workflow
+  team-frontend-quality-gates
+  team-frontend-review-governance
   team-pr-authoring
 )
 

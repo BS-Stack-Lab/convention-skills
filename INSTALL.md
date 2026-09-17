@@ -10,6 +10,11 @@ bash install.sh
 
 - `team-backend-conventions`
 - `team-frontend-conventions`
+- `team-frontend-code-style`
+- `team-frontend-api-integration`
+- `team-frontend-git-workflow`
+- `team-frontend-quality-gates`
+- `team-frontend-review-governance`
 - `team-pr-authoring`
 
 설치 후 Codex를 재시작하거나 새 task를 엽니다. `team-pr-authoring`은 자동 호출을 허용하도록 설정되어 있어, 첫 요청에 PR, Pull Request, PR 설명, PR 템플릿, PR 리뷰가 포함되면 Codex가 먼저 적용합니다. 필요할 때는 `$team-backend-conventions`, `$team-frontend-conventions`, `$team-pr-authoring`으로 명시 호출할 수 있습니다.
