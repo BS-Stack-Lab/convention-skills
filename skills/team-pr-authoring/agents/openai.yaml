@@ -1,0 +1,7 @@
+interface:
+  display_name: "팀 PR 작성 가이드"
+  short_description: "PR 요청 시 자동 적용되는 팀 작성 가이드"
+  default_prompt: "Use $team-pr-authoring to draft or review this pull request."
+
+policy:
+  allow_implicit_invocation: true
