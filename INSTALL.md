@@ -6,9 +6,14 @@
 bash install.sh
 ```
 
-스크립트는 세 스킬을 `~/.codex/skills`에 설치합니다.
+스크립트는 아래 스킬을 `~/.codex/skills`에 설치합니다.
 
 - `team-backend-conventions`
+- `team-backend-code-style`
+- `team-backend-api-integration`
+- `team-backend-git-workflow`
+- `team-backend-quality-gates`
+- `team-backend-review-governance`
 - `team-frontend-conventions`
 - `team-frontend-code-style`
 - `team-frontend-api-integration`
