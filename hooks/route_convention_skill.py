@@ -165,6 +165,22 @@ def main() -> None:
             "migration",
         ),
     )
+    flyway_migration = includes(
+        prompt,
+        (
+            "flyway",
+            "플라이웨이",
+            "flyway migration",
+            "flyway 마이그레이션",
+            "db migration",
+            "database migration",
+            "sql migration",
+            "sql 마이그레이션",
+            "마이그레이션 파일명",
+            "migration filename",
+            "migration naming",
+        ),
+    )
 
     if backend:
         append_unique(skills, "team-backend-conventions")
@@ -194,6 +210,9 @@ def main() -> None:
 
     if pull_request:
         append_unique(skills, "team-pr-authoring")
+
+    if flyway_migration:
+        append_unique(skills, "team-flyway-migration-naming")
 
     if issue_authoring:
         append_unique(
