@@ -7,4 +7,4 @@ description: 프론트엔드 작업의 브랜치 생성, 커밋 작성, Breaking
 
 작업 전에 [프론트엔드 컨벤션 원문](../team-frontend-conventions/references/frontend-convention-original.md)의 `### 2. 깃 브랜치 전략`과 `### 4. 커밋 메시지` 전체를 읽는다.
 
-원문에 정의된 브랜치 기준, 병합 대상, 커밋 형식, 타입·도메인, 길이, Breaking Change, 분리 기준을 그대로 적용한다.
+원문에 정의된 브랜치 기준, 병합 대상, 커밋 형식, 타입·도메인, 길이, Breaking Change, 분리 기준을 그대로 적용한다. 단, 커밋 제목은 `team-work-item-title-conventions`의 명사형 제목 규칙을 우선 적용한다.

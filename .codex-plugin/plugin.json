@@ -1,7 +1,7 @@
 {
   "name": "convention-skills",
-  "version": "1.3.0",
-  "description": "BS-Stack-Lab의 백엔드·프론트엔드·PR·이슈·Flyway 컨벤션 스킬과 자동 라우팅 훅",
+  "version": "1.5.0",
+  "description": "BS-Stack-Lab의 백엔드·프론트엔드·PR·이슈·커밋 제목·Flyway 컨벤션 스킬과 자동 라우팅 훅",
   "author": {
     "name": "BS-Stack-Lab",
     "url": "https://github.com/BS-Stack-Lab"
@@ -13,6 +13,8 @@
     "frontend",
     "pull-request",
     "issue-authoring",
+    "feature-task",
+    "title-conventions",
     "flyway",
     "database-migration",
     "hooks"
@@ -21,7 +23,7 @@
   "interface": {
     "displayName": "Convention Skills",
     "shortDescription": "팀 컨벤션·이슈 작성 스킬과 자동 라우팅 훅",
-    "longDescription": "모든 요청에서 백엔드, 프론트엔드, PR, 이슈 작성, Flyway 관련 팀 컨벤션 스킬을 자동으로 선택하도록 안내합니다.",
+    "longDescription": "모든 요청에서 백엔드, 프론트엔드, PR, 이슈·커밋 제목, Flyway 관련 팀 컨벤션 스킬을 자동으로 선택하도록 안내합니다.",
     "developerName": "BS-Stack-Lab",
     "category": "Productivity",
     "capabilities": [
