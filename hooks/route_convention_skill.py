@@ -29,6 +29,55 @@ def main() -> None:
 
     prompt = str(payload.get("prompt", "")).casefold()
     skills: list[str] = []
+    append_unique(skills, "team-convention-autoload")
+
+    schema_subject = includes(
+        prompt,
+        (
+            "테이블",
+            "컬럼",
+            "인덱스",
+            "외래 키",
+            "외래키",
+            "제약 조건",
+            "제약조건",
+            "db 스키마",
+            "데이터베이스 스키마",
+            "ddl",
+            "jpa entity",
+            "jpa 엔티티",
+            "엔티티",
+            "schema",
+            "table",
+            "column",
+            "index",
+            "foreign key",
+            "constraint",
+            "primary key",
+            "unique key",
+        ),
+    )
+    schema_change_intent = includes(
+        prompt,
+        (
+            "추가",
+            "생성",
+            "변경",
+            "수정",
+            "삭제",
+            "이름 변경",
+            "마이그레이션",
+            "add",
+            "create",
+            "alter",
+            "change",
+            "modify",
+            "drop",
+            "rename",
+            "migrate",
+        ),
+    )
+    schema_change = schema_subject and schema_change_intent
 
     backend = includes(
         prompt,
@@ -42,7 +91,7 @@ def main() -> None:
             "jpa",
             "hibernate",
         ),
-    )
+    ) or schema_change
     frontend = includes(
         prompt,
         (
@@ -165,6 +214,23 @@ def main() -> None:
             "migration",
         ),
     )
+    flyway_migration = schema_change or includes(
+        prompt,
+        (
+            "flyway",
+            "플라이웨이",
+            "flyway migration",
+            "flyway 마이그레이션",
+            "db migration",
+            "database migration",
+            "sql migration",
+            "sql 마이그레이션",
+            "마이그레이션 파일명",
+            "migration filename",
+            "migration naming",
+        ),
+    )
+    backend = backend or flyway_migration
 
     if backend:
         append_unique(skills, "team-backend-conventions")
@@ -194,6 +260,9 @@ def main() -> None:
 
     if pull_request:
         append_unique(skills, "team-pr-authoring")
+
+    if flyway_migration:
+        append_unique(skills, "team-flyway-migration-naming")
 
     if issue_authoring:
         append_unique(
