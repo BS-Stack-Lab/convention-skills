@@ -104,6 +104,37 @@ def main() -> None:
             "vue",
         ),
     )
+    issue_backend_scope = includes(
+        prompt,
+        (
+            "백엔드",
+            "backend",
+            "spring boot",
+            "spring",
+            "java",
+            "gradle",
+            "jpa",
+            "hibernate",
+            "be task",
+            "be 이슈",
+            "[be]",
+        ),
+    )
+    issue_frontend_scope = includes(
+        prompt,
+        (
+            "프론트엔드",
+            "frontend",
+            "프론트",
+            "react",
+            "typescript",
+            "javascript",
+            "vue",
+            "fe task",
+            "fe 이슈",
+            "[fe]",
+        ),
+    )
     pull_request = bool(re.search(r"(?<![a-z0-9])pr(?![a-z0-9])", prompt)) or includes(
         prompt,
         ("pull request", "풀 리퀘스트", "pr 작성", "pr 리뷰", "코드 리뷰", "code review"),
@@ -114,9 +145,19 @@ def main() -> None:
             "이슈 작성",
             "이슈 생성",
             "이슈 등록",
+            "이슈 만들어",
+            "이슈 만들",
+            "이슈 관련",
+            "기능 이슈",
+            "하위 이슈",
+            "테스크 이슈",
             "issue 작성",
             "issue create",
             "issue 생성",
+            "feature issue",
+            "task issue",
+            "sub-issue",
+            "sub issue",
             "github issue",
             "github 이슈",
         ),
@@ -261,16 +302,25 @@ def main() -> None:
     if pull_request:
         append_unique(skills, "team-pr-authoring")
 
+    if issue_authoring or pull_request or git_workflow:
+        append_unique(skills, "team-work-item-title-conventions")
+
     if flyway_migration:
         append_unique(skills, "team-flyway-migration-naming")
 
     if issue_authoring:
-        append_unique(
-            skills,
-            "team-incident-issue-authoring"
-            if incident_issue
-            else "team-development-issue-authoring",
-        )
+        if incident_issue:
+            append_unique(skills, "team-incident-issue-authoring")
+        else:
+            append_unique(skills, "team-development-issue-authoring")
+            if not issue_backend_scope and not issue_frontend_scope:
+                append_unique(skills, "team-backend-feature-task-issue-authoring")
+                append_unique(skills, "team-frontend-feature-task-issue-authoring")
+            else:
+                if issue_backend_scope:
+                    append_unique(skills, "team-backend-feature-task-issue-authoring")
+                if issue_frontend_scope:
+                    append_unique(skills, "team-frontend-feature-task-issue-authoring")
 
     if not skills:
         return

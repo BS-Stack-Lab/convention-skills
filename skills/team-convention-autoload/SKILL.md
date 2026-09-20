@@ -16,7 +16,8 @@ description: 모든 사용자 요청에서 작업 범위를 판별해 BS-Stack-L
 - Spring Boot·Java·백엔드 작업: `team-backend-conventions`을 먼저 적용하고, 실제 변경에 맞춰 코드 스타일, API 통합, Git 워크플로, 품질 검증, 리뷰 거버넌스 스킬을 적용한다.
 - 영속 테이블·컬럼·인덱스·제약 조건·관계·SQL DDL을 생성·변경·삭제하거나, 코드 탐색 중 이 변경이 필요해진 경우: `team-flyway-migration-naming`을 적용한다. 사용자가 Flyway를 언급하지 않아도 새 Versioned Migration을 판단·생성하고 팀 파일명 규칙을 사용한다.
 - React·TypeScript·프론트엔드 작업: `team-frontend-conventions`을 먼저 적용하고, 실제 변경에 맞춰 코드 스타일, API 통합, Git 워크플로, 품질 검증, 리뷰 거버넌스 스킬을 적용한다.
-- GitHub Issue 작성·수정: 기능·개선·리팩터링은 `team-development-issue-authoring`, 이미 발생한 버그·장애·사용자 문의는 `team-incident-issue-authoring`을 적용한다.
+- GitHub Issue 작성·수정: 기능·개선·리팩터링은 `team-development-issue-authoring`을 적용한다. 백엔드만 명시되면 `[BE][FEATURE]`와 필요한 `[BE][TASK]`를, 프론트엔드만 명시되면 `[FE][FEATURE]`와 필요한 `[FE][TASK]`를 작성한다. 영역이 명시되지 않았거나 요청·설계 문서·저장소 구조에서 양쪽 영향이 확인되면 두 영역 스킬을 모두 적용해 `[BE][FEATURE]`와 `[FE][FEATURE]` 초안을 각각 작성한다. 테스크는 기능 부모의 규모·독립 배정·의존성·검증 기준을 충족할 때만 분리한다. 이미 발생한 버그·장애·사용자 문의는 `team-incident-issue-authoring`을 적용한다.
+- GitHub 이슈, PR, 커밋 제목 작성·수정·검토: `team-work-item-title-conventions`을 적용해 명사형 제목 규칙을 사용한다.
 - PR 작성·수정·리뷰: `team-pr-authoring`을 적용한다. DB 스키마·마이그레이션·보안·배포 위험이 있으면 고위험 PR 기준을 적용한다.
 
 ## 경계
